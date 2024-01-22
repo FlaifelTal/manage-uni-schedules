@@ -261,31 +261,31 @@ def make_schedule():
     create_schedule1(course_list, course_schedule)
 
 
-def create_schedule1(course_list, course_schedule):
-    # create an empty schedule
-    schedule = []
+# def create_schedule1(course_list, course_schedule):
+#     # create an empty schedule
+#     schedule = []
 
-    # iterate over the course list
-    for code in course_list:
-        # get the lecture and lab times for the course
-        browser = course_schedule.get(code, {})
-        monday = browser.get('M', '')
-        tuesday = browser.get('T', '')
-        wednesday = browser.get('W', '')
-        thursday = browser.get('R', '')
-        friday = browser.get('F', '')
-        lab = browser.get('Lab', {})
-        lab_time = list(lab.values())[0] if lab else ''
+#     # iterate over the course list
+#     for code in course_list:
+#         # get the lecture and lab times for the course
+#         browser = course_schedule.get(code, {})
+#         monday = browser.get('M', '')
+#         tuesday = browser.get('T', '')
+#         wednesday = browser.get('W', '')
+#         thursday = browser.get('R', '')
+#         friday = browser.get('F', '')
+#         lab = browser.get('Lab', {})
+#         lab_time = list(lab.values())[0] if lab else ''
 
-        # append the course and its times to the schedule
-        schedule.append((code, monday, tuesday, wednesday, thursday, friday, lab_time))
+#         # append the course and its times to the schedule
+#         schedule.append((code, monday, tuesday, wednesday, thursday, friday, lab_time))
 
-    # print the schedule
-    print(
-        f"{'Course':<10} {'Monday':<20} {'Tuesday':<20} {'Wednesday':<20} {'Thursday':<20} {'Friday':<20} {'Time':<20}")
-    for course in schedule:
-        print(
-            f"{course[0]:<10} {course[1]:<20} {course[2]:<20} {course[3]:<20} {course[4]:<20} {course[5]:<20} {course[6]:<20}")
+#     # print the schedule
+#     print(
+#         f"{'Course':<10} {'Monday':<20} {'Tuesday':<20} {'Wednesday':<20} {'Thursday':<20} {'Friday':<20} {'Time':<20}")
+#     for course in schedule:
+#         print(
+#             f"{course[0]:<10} {course[1]:<20} {course[2]:<20} {course[3]:<20} {course[4]:<20} {course[5]:<20} {course[6]:<20}")
 
 
 # ************************************************
